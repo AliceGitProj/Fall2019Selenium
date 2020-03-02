@@ -4,7 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MyFirstSeleniumScript {
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception {
 
         //Set up Chrome driver
 
@@ -15,5 +15,18 @@ public class MyFirstSeleniumScript {
         //open some website
 
         driver.get("http://google.com");
+        Thread.sleep(3000);
+        String title = driver.getTitle();//returns<title>Some title</title> text
+        String expectedTitle = "Google";
+
+        System.out.println("Title is "+ title);
+
+        if(expectedTitle.equals(title)){
+            System.out.println("Test passed!");
+        }else {
+            System.out.println("Test failed!");
+        }
+
+        driver.close();
     }
 }
