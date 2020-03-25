@@ -21,6 +21,6 @@ public class IframesPractice {
 
     @Test
     public void test(){
-
+        System.out.println("HAHAHA");
     }
 }
